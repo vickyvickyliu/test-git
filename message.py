@@ -85,7 +85,7 @@ def Confirm_Template():
     message = TemplateSendMessage(
         alt_text='是否註冊成為會員？',
         template=ConfirmTemplate(
-            text="是否註冊成為會員？",
+            text="是否註冊成為會員",
             actions=[
                 PostbackTemplateAction(
                     label="馬上註冊",
