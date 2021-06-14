@@ -183,3 +183,133 @@ def checknumber():
 def we(uu):
     if dict[][register][]userid
     a=dict[uu][register](name)'''
+
+def findjustgo():
+    message = TemplateSendMessage(
+        alt_text='請選擇目弟弟',
+        template=ButtonsTemplate(
+            text="請選擇目的地",
+            actions=[
+                PostbackTemplateAction(
+                    label="1.捷運士林站",
+                    text="目的地:捷運士林站",
+                    data="1"
+                ),
+                PostbackTemplateAction(
+                    label="2.捷運劍南路站",
+                    text="目的地:捷運劍南路站",
+                    data="2"
+                ),
+                PostbackTemplateAction(
+                    label="3.東吳大學外雙溪校區",
+                    text="目的地:東吳大學外雙溪校區",
+                    data="3"
+                )
+            ]
+        )
+    )
+    return message
+
+def call():
+    message = TemplateSendMessage(
+        alt_text='請選擇目弟弟',
+        template=ButtonsTemplate(
+            text="請選擇目的地",
+            actions=[
+                PostbackTemplateAction(
+                    label="1.捷運士林站",
+                    text="目的地:捷運士林站",
+                    data="1"
+                ),
+                PostbackTemplateAction(
+                    label="2.捷運劍南路站",
+                    text="目的地:捷運劍南路站",
+                    data="2"
+                ),
+                PostbackTemplateAction(
+                    label="3.東吳大學外雙溪校區",
+                    text="目的地:東吳大學外雙溪校區",
+                    data="3"
+                )
+            ]
+        )
+    )
+    return message
+
+def nowinformation():
+    message = TemplateSendMessage(
+        alt_text='請選擇目弟弟',
+        template=ButtonsTemplate(
+            text="請選擇目的地",
+            actions=[
+                PostbackTemplateAction(
+                    label="1.捷運士林站",
+                    text="目的地:捷運士林站",
+                    data="1"
+                ),
+                PostbackTemplateAction(
+                    label="2.捷運劍南路站",
+                    text="目的地:捷運劍南路站",
+                    data="2"
+                ),
+                PostbackTemplateAction(
+                    label="3.東吳大學外雙溪校區",
+                    text="目的地:東吳大學外雙溪校區",
+                    data="3"
+                )
+            ]
+        )
+    )
+    return message
+
+def justgosystem():
+    message = TemplateSendMessage(
+        alt_text='請選擇目弟弟',
+        template=ButtonsTemplate(
+            text="請選擇目的地",
+            actions=[
+                PostbackTemplateAction(
+                    label="1.捷運士林站",
+                    text="目的地:捷運士林站",
+                    data="1"
+                ),
+                PostbackTemplateAction(
+                    label="2.捷運劍南路站",
+                    text="目的地:捷運劍南路站",
+                    data="2"
+                ),
+                PostbackTemplateAction(
+                    label="3.東吳大學外雙溪校區",
+                    text="目的地:東吳大學外雙溪校區",
+                    data="3"
+                )
+            ]
+        )
+    )
+    return message
+
+def others():
+    message = TemplateSendMessage(
+        alt_text='請選擇目弟弟',
+        template=ButtonsTemplate(
+            text="請選擇目的地",
+            actions=[
+                PostbackTemplateAction(
+                    label="1.捷運士林站",
+                    text="目的地:捷運士林站",
+                    data="1"
+                ),
+                PostbackTemplateAction(
+                    label="2.捷運劍南路站",
+                    text="目的地:捷運劍南路站",
+                    data="2"
+                ),
+                PostbackTemplateAction(
+                    label="3.東吳大學外雙溪校區",
+                    text="目的地:東吳大學外雙溪校區",
+                    data="3"
+                )
+            ]
+        )
+    )
+    return message

@@ -67,19 +67,19 @@ def handle_message(event):
         message = membersystem()
         line_bot_api.reply_message(event.reply_token, message)
     elif '尋找共乘' in msg:
-        message = buttons_message()
+        message = findjustgo()
         line_bot_api.reply_message(event.reply_token, message)
     elif '即時資訊' in msg:
-        message = Confirm_Template()
+        message = nowinformation()
         line_bot_api.reply_message(event.reply_token, message)
     elif '我要揪車' in msg:
-        message = Carousel_Template()
+        message =  call()
         line_bot_api.reply_message(event.reply_token, message)
     elif '揪車情況/取消揪車' in msg:
-        message = test()
+        message = justgosystem()
         line_bot_api.reply_message(event.reply_token, message)
     elif '使用說明/QA/其他' in msg:
-        message = function_list()
+        message = others()
         line_bot_api.reply_message(event.reply_token, message)
     elif '回訊息' in msg:
         try:
