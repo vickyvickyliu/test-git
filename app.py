@@ -50,9 +50,14 @@ def handle_message(event):
     msg = event.message.text
     try:
         uu=event.source.user_id
-        line_bot_api.push_message(uu,TextSendMessage(text=uu+msg))
+        line_bot_api.push_message('Udf7af3efedecd6323e16491c202af7ac',TextSendMessage(text=uu+'發了:'+msg))
+        try:
+            line_bot_api.multicast(['Udf7af3efedecd6323e16491c202af7ac', 'Ude8b39f4c814be323dba05addd90a40a'], TextSendMessage(text=uu+"發了:"+msg))
         #uu=event.source.user_id
         #line_bot_api.multicast(['Uea89b2572fdf1e317967abcc6adf9acc', 'U0b7c9d483a2832b52d89e7d6f8820284'], TextSendMessage(text=uu+"發了:"+msg))
+        except:
+            message = TextSendMessage(text="錯誤")
+            line_bot_api.reply_message(event.reply_token, message)  
     except:
         message = TextSendMessage(text="錯誤")
         line_bot_api.reply_message(event.reply_token, message)
