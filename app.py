@@ -28,7 +28,7 @@ static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 line_bot_api = LineBotApi('rJEleCsjWB6K1JbL7GEeuA97VtYBUjaKeav4nH+33ajx5rXuwFxQdjJ0PCqALVQPt3Mk6bZx6giFImad7eMFHEzJYnvB4ELf31UTr2yZ3HpZsHPz9+ppr7M5YtihtVGIFh0WWoSC4lyS0iDDcr3BiAdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 handler = WebhookHandler('e5656d0269c4c60d4d149288d67e3083')
-
+mydict={}
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
