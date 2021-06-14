@@ -50,8 +50,8 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     try:
-        uu=event.source.user_id
-        line_bot_api.push_message('Udf7af3efedecd6323e16491c202af7ac',TextSendMessage(text=uu+'發了:'+msg))
+        line_id=event.source.user_id
+        line_bot_api.push_message('Udf7af3efedecd6323e16491c202af7ac',TextSendMessage(text=line_id+'發了:'+msg))
         '''try:
             line_bot_api.multicast(['Udf7af3efedecd6323e16491c202af7ac', 'Ude8b39f4c814be323dba05addd90a40a'], TextSendMessage(text=uu+"發了:"+msg))
         #uu=event.source.user_id
@@ -81,14 +81,52 @@ def handle_message(event):
     elif '使用說明/QA/其他' in msg:
         message = others()
         line_bot_api.reply_message(event.reply_token, message)
+    elif '註冊' in msg:
+        try:
+            if line_id not in mydict:
+                mydict[line_id]={}
+                line_bot_api.push_message(line_id,TextSendMessage(text='檢測到此id未註冊過，進行註冊程序'))
+            else:
+                line_bot_api.push_message(line_id,TextSendMessage(text='檢測到此id註冊過，進行更改資料程序'))
+        except:
+            line_bot_api.push_message(line_id,TextSendMessage(text="失敗"))
+        #message = keyword()
+        #line_bot_api.reply_message(event.reply_token, message)
+    #測試用
+    elif '呼叫字典' in msg:
+        message = mydict
+        line_bot_api.reply_message(event.reply_token, message)
+    #洪學姊部分
+    elif '_dbmbcheck' in msg: # 註冊的回覆
+        message = name()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '_name' in msg: # name的回覆
+        message = student_id()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '_sid' in msg:  # student_id的回覆
+        message = depart()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '_depart' in msg: # depart的回覆
+        message = sex()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '_sex' in msg: # sex的回覆
+        message = password()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '_idpass' in msg: # password的回覆
+        message = password_check()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '_passchk' in msg: # password_check的回覆
+        message = email_check()
+        line_bot_api.reply_message(event.reply_token, message)
+    #管理員回訊息
     elif '回訊息' in msg:
         try:
             replayid=msg[:33]
             massage=msg[37:]+"\nby管理員"
-            uu=event.source.user_id
             line_bot_api.push_message(replayid,TextSendMessage(text=massage))
         except:
-            line_bot_api.push_message(uu,TextSendMessage(text="失敗"))
+            #line_bot_api.push_message(line_id,TextSendMessage(text="失敗"))
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請點選圖文表單上的功能，進入服務喔！'))
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='訊息回覆成功'))
     else:
         message = TextSendMessage(text="請點選圖文表單上的功能，進入服務喔！")

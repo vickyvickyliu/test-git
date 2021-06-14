@@ -14,17 +14,14 @@ def membersystem():
                     actions=[
                         PostbackTemplateAction(
                             label='註冊',
-                            data='註冊',
                             text='12345'
                         ),
                         PostbackTemplateAction(
                             label='登入',
-                            data='登入',
                             text='登入'
                         ),
                         PostbackTemplateAction(
                             label=' ',
-                            data=' ',
                             text=' '
                         )
                     ]
