@@ -95,29 +95,29 @@ def handle_message(event):
     #測試用
     elif '呼叫字典' in msg:
         message = mydict
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     #洪學姊部分
     elif '_dbmbcheck' in msg: # 註冊的回覆
         message = name()
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     elif '_name' in msg: # name的回覆
         message = student_id()
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     elif '_sid' in msg:  # student_id的回覆
         message = depart()
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     elif '_depart' in msg: # depart的回覆
         message = sex()
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     elif '_sex' in msg: # sex的回覆
         message = password()
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     elif '_idpass' in msg: # password的回覆
         message = password_check()
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     elif '_passchk' in msg: # password_check的回覆
         message = email_check()
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     #管理員回訊息
     elif '回訊息' in msg:
         try:
