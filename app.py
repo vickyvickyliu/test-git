@@ -82,7 +82,7 @@ def handle_message(event):
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
     else:
-        message = TextSendMessage(text="成功")
+        message = TextSendMessage(text="請點選圖文表單上的功能，進入服務喔！")
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
