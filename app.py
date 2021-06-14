@@ -14,7 +14,6 @@ from message import *
 from new import *
 from Function import *
 from appnew import *
-#from member import *
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -86,6 +85,8 @@ def handle_message(event):
         try:
             if line_id not in mydict:
                 mydict[line_id]={}
+                mydict[line_id]["register"]={}
+
                 line_bot_api.push_message(line_id,TextSendMessage(text='檢測到此id未註冊過，進行註冊程序'))
             else:
                 line_bot_api.push_message(line_id,TextSendMessage(text='檢測到此id註冊過，進行更改資料程序'))
