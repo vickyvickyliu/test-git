@@ -94,7 +94,7 @@ def handle_message(event):
         #line_bot_api.reply_message(event.reply_token, message)
     #測試用
     elif '呼叫字典' in msg:
-        message = mydict
+        message = str(mydict)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     #洪學姊部分
     elif '_dbmbcheck' in msg: # 註冊的回覆
