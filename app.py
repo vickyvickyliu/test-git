@@ -64,7 +64,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
         #line_bot_api.push_message(uu,TextSendMessage(text=uu+msg))
     if '會員' in msg:
-        message = imagemap_message()
+        message = membersystem()
         line_bot_api.reply_message(event.reply_token, message)
     elif '尋找共乘' in msg:
         message = buttons_message()
