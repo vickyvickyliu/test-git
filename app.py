@@ -48,6 +48,11 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
+    uu=event.source.user_id
+    try:
+        line_bot_api.multicast(['Uea89b2572fdf1e317967abcc6adf9acc', 'U0b7c9d483a2832b52d89e7d6f8820284'], TextSendMessage(text=uu+"發了:"+msg))
+    except:
+        line_bot_api.push_message('Uea89b2572fdf1e317967abcc6adf9acc',TextSendMessage(text=uu+msg))
     if '最新合作廠商' in msg:
         message = imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
