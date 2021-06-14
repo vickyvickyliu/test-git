@@ -81,6 +81,15 @@ def handle_message(event):
     elif '使用說明/QA/其他' in msg:
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
+    elif '回訊息' in msg:
+        try:
+            replayid=msg[:33]
+            massage=msg[37:]
+            uu=event.source.user_id
+            line_bot_api.push_message(replayid,TextSendMessage(text=massage))
+        except:
+            line_bot_api.push_message(uu,TextSendMessage(text="失敗"))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='from 管理員'))
     else:
         message = TextSendMessage(text="請點選圖文表單上的功能，進入服務喔！")
         line_bot_api.reply_message(event.reply_token, message)
