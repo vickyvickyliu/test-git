@@ -13,7 +13,6 @@ from linebot.models import *
 from message import *
 from new import *
 from Function import *
-#from appnew import *
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -28,6 +27,7 @@ static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 line_bot_api = LineBotApi('rJEleCsjWB6K1JbL7GEeuA97VtYBUjaKeav4nH+33ajx5rXuwFxQdjJ0PCqALVQPt3Mk6bZx6giFImad7eMFHEzJYnvB4ELf31UTr2yZ3HpZsHPz9+ppr7M5YtihtVGIFh0WWoSC4lyS0iDDcr3BiAdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 handler = WebhookHandler('e5656d0269c4c60d4d149288d67e3083')
+mydict={}
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -63,7 +63,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
         #line_bot_api.push_message(uu,TextSendMessage(text=uu+msg))
     if '會員' in msg:
-        message = membersystem()
+        message = imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
     elif '揪車情況/取消揪車' in msg:
         message = buttons_message()
@@ -81,12 +81,10 @@ def handle_message(event):
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
     else:
-        message = TextSendMessage(text="請點選圖文表單上的功能，進入服務喔！")
+        message = TextSendMessage(text="成功")
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-
-#mydict={}
